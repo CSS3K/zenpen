@@ -26,7 +26,10 @@ html {
 
 
 html, body {
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
+	font-family: 'codefont-normal','Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+
 	padding: 0px;
 	margin: 0px;
 	height: 100%;
@@ -56,14 +59,14 @@ section {
 
 header {
 	font-weight: bold;
-	font-size: 38px;
+	font-size: 28px;
 }
 
 article {
 	padding-bottom: 50px;
-	line-height: 30px;
+	line-height: 16px;
 	min-height: 90%;
-	font-size: 22px;
+	font-size: 13px;
 	display: block;
 }
 
@@ -94,7 +97,7 @@ blockquote {
 }
 
 .yin {
-	background: #fdfdfd;
+	background: hsla(210,9%,87%,1);;
 	color: #111;
 }
 
@@ -137,7 +140,7 @@ blockquote {
 	padding: 0px;
 	height: 32px;
 	width: 25px;
-	border: 0px;
+	border: none;
 }
 
 a {
@@ -161,7 +164,7 @@ a:hover {
 
 .quote {
 	line-height: 60px !important;
-	font-size: 49px !important;
+	font-size: 14px !important;
 }
 
 /*********************************************
@@ -417,4 +420,88 @@ a:hover {
 .wrapper {
 	position: relative;
 	height: 100%;
+}
+.svgicon {
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size:            22px 22px !important;
+	-o-background-size:         22px 22px !important;
+	-webkit-background-size:    22px 22px !important;
+	background-size:            22px 22px !important;
+	/*	background-size:    		cover 	  !important; */
+}
+.colorpicker {
+    background-image:           url(../img/colorpicker.svg) !important;
+}
+.command {
+    background-image:           url(../img/command.svg) !important;
+}
+.fullscreen {
+    background-image:           url(../img/fullscreen.svg) !important;
+}
+
+/* color picker styles ==================== */
+.sp-replacer {
+	margin:0;
+	overflow:hidden;
+	cursor:pointer;
+	padding: 4px;
+	display:inline-block;
+	*zoom: 1;
+	*display: inline;
+	border: none;
+	background: transparent;
+	color: #333;
+	vertical-align: middle;
+	position: relative;
+}
+
+.sp-preview {
+	border: none;
+	background: none;
+	border-radius: 3px;
+	background-clip: padding-box;
+	box-shadow: 0 1px 0 rgba(255,255,255,0);
+	height: 30px;
+	width: 30px;
+
+}
+
+.sp-preview-inner {
+	border-radius: 0;
+	background-clip: padding-box;
+	border-radius: 500px;
+	height: 25px;
+	width: 25px;
+}
+
+.sp-replacer:hover .sp-dd {
+	opacity: 1;
+}
+
+.sp-dd {
+	position: absolute;
+	left: 29px;
+	top: 8px;
+	opacity: 0;
+	color: hsla(210,2%,55%,1);
+}
+
+.sp-container {
+	border-radius: 0;
+	background-color: rgba(0,0,0, .45);
+	border: none;
+	box-shadow: 0 0 0 2px rgba(255,255,255, .68),
+				0 0 8px 10px rgba(0,0,0, .25);
+	border-radius: 6px;
+	padding: 0;
+	margin-top: 80px;
+}
+
+.sp-picker-container {
+	border-left: none;
+}
+
+.sp-palette-container {
+	border-right: solid 1px rgba(0,0,0, .55);
 }

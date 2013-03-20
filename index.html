@@ -4,24 +4,33 @@
 	<head>
 
 		<!-- MISC/META -->
-		<title> ZenPen ~ Minimal Distraction, Maximim Zen </title>
+		<title> Calm.io </title>
         <meta charset="utf-8">
-		<meta name="description" content="Zenpen - A minimal web based text editor, for the modern man.">
-        
-		<!-- CSS -->
-		<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/fonts.css" rel="stylesheet">
+		<meta name="description" content="Calm.io - a web editor for modern man.">
+
+		<link href="http://bgrins.github.com/spectrum/spectrum.css" rel="stylesheet">
+ 	    <link href="assets/css/style.css" rel="stylesheet">
+		<link href="assets/css/fonts.css" rel="stylesheet">
 
 		<!-- LIBS -->
-		<script src="js/libs/head.min.js"></script>
+		<script src="assets/js/libs/head.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+		<!-- color picker -->
+		<script src="http://bgrins.github.com/spectrum/spectrum.js"></script>
+
+		<style>
+			.full-spectrum .sp-palette {
+			max-width: 200px;
+			}
+		</style>
+
 		
 		<!-- JS loading in footer -->
 
     </head>
 
 	<body class="yin">
-
 		<div class="overlay">
 			<div class="wordcount modal">
 				<h1>Target Word Count</h1>
@@ -32,32 +41,33 @@
 
 			<div class="description modal">
 				<h1> About ZenPen </h1>
-				<p>  Zenpen is a minimalist writing zone by <a href="http://tholman.com">Tim Holman</a> (<a href="http://twitter.com/twholman">@twholman</a>), to get you into that zone, where you can focus on the writing - with none of the distractions. ZenPen is open source on <a href="http://github.com/tholman/zenpen">Github</a> (with many improvements on the way!). If you have any questions, hit me up via <a href="mailto:timothy.w.holman@gmail.com">email</a> - ooh, you can follow me on twitter for updates too: <a href="http://twitter.com/twholman">@twholman</a> </p>
+				<p>  Zenpen is a minimalist writing zone by <a href="http://tholman.com">Court Kizer</a></p>
 			</div>
 		</div>
 
 		<div class="text-options">
 			<div class="options">
-				<span class="no-overflow">
+				<span class="no-overflow=DISABLED">
 					<span class="lengthen ui-inputs">
 						<button class="url useicons">&#xe001;</button>
 						<input class="url-input" type="text" placeholder="Type or Paste URL here"/>
 						<button class="bold">b</button>
 						<button class="italic">i</button>
 						<button class="quote">&rdquo;</button>
+						<button class="color">COLOR</button>
 					</span>
 				</span>
 			</div>
 		</div>
 
-		<div class="ui">
+		<div class="ui toolbar">
 
 			<div class="wrapper">
 
 				<div class="top editing">
 					<button class="fullscreen useicons">
 						&#xe006;
-					</buttom>
+					</button>
 
 					<button class="color-flip useicons">
 						&#xe000;
@@ -66,6 +76,17 @@
 					<button class="target useicons">
 						&#xe002;
 					</button>
+
+					<button class="target svgicon colorpicker">
+					</button>
+
+					<button class="target svgicon command">
+					</button>
+					<button class="target svgicon fullscreen">
+					</button>
+
+					<!-- color picker -->
+					<input type='text' id="full" />
 				</div>
 
 				<div class="bottom">
@@ -76,6 +97,7 @@
 			</div>
 		</div>
 
+
 		<div class="word-counter">
 			<span class="progress"></span>
 		</div>
@@ -83,7 +105,7 @@
 		<section>
 			
 			<header contenteditable="true" class="header">
-				This is ZenPen
+				Edit CSS Snippet
 			</header>
 
 			<article contenteditable="true" class="content">
@@ -97,7 +119,7 @@
 				</p>
 
 				<p>
-					You can use <b>bold</b>, <i>italics</i>, <b><i>both</i></b> and <a href="http://zenpen.io"> urls </a> just by highlighting the text and selecting them from the tiny options box that appears above it.
+					You can use <b>bold</b>, <i>italics</i>, <b><i>both</i></b> and <a href="http://calm.io"> urls </a> just by highlighting the text and selecting them from the tiny options box that appears above it.
 				</p>
 
 				<blockquote>
@@ -108,7 +130,7 @@
 					For <i>questions</i> and <b>open source info</b>, Click that little question mark at the bottom left of the screen.
 				</p>
 
-				<p>Happy Typing! ~ <b>Tim Holman (@twholman)</b></p>
+				<p>Happy Typing! ~ <b>Court Kizer (@bdoma)</b></p>
 
 			</article>
 
@@ -118,10 +140,10 @@
 		<script type="text/javascript">
 
 			// Load required scripts.	
-			head.js( "js/libs/fullScreen.js",
-				"js/utils.js",
-				"js/ui.js",
-				"js/editor.js",
+			head.js( "assets/js/libs/fullScreen.js",
+				"assets/js/utils.js",
+				"assets/js/ui.js",
+				"assets/js/editor.js",
 	        	function(){
 	            	
 	            	// Initiate ZenPen
@@ -130,5 +152,60 @@
 	            }
 	        );
         </script>
+        
+        <!-- Colorpicker -->
+        <script type="text/javascript">
+        $(".basic").spectrum({
+            color: "#f00",
+            change: function(color) {
+                $("#basic-log").text("change called: " + color.toHexString());
+            }
+        });
+
+        $("#full").spectrum({
+            color: "#ECC",
+            showInput: true,
+            className: "full-spectrum",
+            showInitial: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            maxPaletteSize: 10,
+            preferredFormat: "hex",
+            localStorageKey: "spectrum.demo",
+            move: function (color) {
+                
+            },
+            show: function () {
+            
+            },
+            beforeShow: function () {
+            
+            },
+            hide: function () {
+            
+            },
+            change: function() {
+                
+            },
+            palette: [
+                ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                "rgb(204, 204, 204)", "rgb(217, 217, 217)","rgb(255, 255, 255)"],
+                ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"], 
+                ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)", 
+                "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)", 
+                "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)", 
+                "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)", 
+                "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)", 
+                "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)", 
+                "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+            ]
+        });
+
+        </script>
+
 	</body>
 </html>

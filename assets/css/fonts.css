@@ -58,3 +58,30 @@ you can use the generic selector below, but it's slower:
 .icon-wrench:before {
 	content: "\f0ad";
 }
+
+/* Hel'l'vetica Monospaced Coding Fonts by Court Kizer */
+
+@font-face {
+    font-family: 'codefont-bold';
+    src: url('../fonts/hellveticamonospacedpro-bold-webfont.eot');
+    src: url('../fonts/hellveticamonospacedpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hellveticamonospacedpro-bold-webfont.woff') format('woff'),
+         url('../fonts/hellveticamonospacedpro-bold-webfont.ttf') format('truetype'),
+         url('../fonts/hellveticamonospacedpro-bold-webfont.svg#hellvetica_monospaced_probold') format('svg');
+    font-weight: bold;
+    font-style: bold;
+
+}
+
+@font-face {
+    font-family: 'codefont-normal';
+    src: url('../fonts/hellveticamonospacedpro-regular-webfont.eot');
+    src: url('../fonts/hellveticamonospacedpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hellveticamonospacedpro-bold-webfont.woff') format('woff'),
+         url('../fonts/hellveticamonospacedpro-regular-webfont.ttf') format('truetype'),
+         url('../fonts/hellveticamonospacedpro-regular-webfont.svg#hellvetica_monospaced_proRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+
+}

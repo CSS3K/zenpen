@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="146px" height="147px" viewBox="0 0 146 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Fullscreen_alt</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page 1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fullscreen_alt" fill="#000000">
+            <path d="M21.4460892,106.966546 L0,85.3166556 L0,147 L61.1025729,147 L39.3439688,125.033864 L65.4582729,98.6694191 C70.1209307,93.9620992 70.1157792,86.3260643 65.4491857,81.6162991 L64.4533105,80.6112109 C59.785634,75.9003527 52.2213754,75.8978487 47.5595262,80.6041439 L21.4460892,106.966546 Z M106.601845,21.6956921 L80.5088803,47.6815198 C75.8095555,52.3615494 75.8009591,59.9398303 80.5021192,64.6204691 L81.4206535,65.5349939 C86.1162443,70.2100877 93.7247136,70.2138793 98.4315588,65.5266196 L124.524234,39.5425176 L146,60.9296443 L146,0 L84.8162074,0 L106.601845,21.6956921 Z M106.601845,21.6956921" id="Shape"></path>
+        </g>
+    </g>
+</svg>
